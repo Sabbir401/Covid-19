@@ -1,43 +1,16 @@
 <!DOCTYPE html>
+<?php include 'nav.php' ?>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/faq.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
 </head>
 <body>
-	<nav>
-         <label class="logo"><a href="home.php"><img src="covid.jpg"></a></label>
-         <ul>
-            <li><a class="active" href="home.php">Home</a></li>
-            <li>
-               <a href="#">Registration
-               <i class="fas fa-caret-down"></i>
-               </a>
-               <ul>
-                  <li><a href="admin_signup.php" target="_blank">Admin</a></li>
-                  <li><a href="doctor_signup.php" target="_blank">Doctor</a></li>
-                  <li><a href="user_signup.php" target="_blank">Public</a></li>
-               </ul>
-            </li>
-            <li>
-               <a href="#">Login As
-               <i class="fas fa-caret-down"></i>
-               </a>
-               <ul>
-                  <li><a href="admin_login.php" target="_blank">Admin</a></li>
-                  <li><a href="doctor_login.php" target="_blank">Doctor</a></li>
-                  <li><a href="user_login.php" target="_blank">Public</a></li>
-               </ul>
-            </li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Feedback</a></li>
-         </ul>
-      </nav>
-	<img src="faq.jpg" width="100%">
+	<img src="img/faq.jpg" width="100%">
 	<div class="wrapper">
 		<p>Various questions and answers related to registration, next steps, receipt of SMS message, receipt of vaccine card, vaccination center, time of vaccination, dose of vaccine, receipt of final certificate etc. can be found in the following section.</p>
 		<h1>Frequently Asked Questions about Covid-19 Corona Vaccine</h1>
@@ -147,36 +120,6 @@
 		</details>
 		<hr/>	
 	</div>
-
-	<div class="bot-container">
-         <table>
-            <tr>
-               <th rowspan="4"><img src="logo.png"></th>
-               <td style="padding-top: 20px;"><a href="">FAQ</a></td>
-               <td colspan="3" style="padding-top: 20px;">
-                  Contacts</td>
-               <td rowspan="4">
-                  <a href="https://www.facebook.com/kazisabbir.ahmed.7/" target="_blank"><img src="fb.png"></a>
-               </td>
-               <td rowspan="4">
-                  <a href="https://www.instagram.com/kazi_sabbir_ahmed4/?hl=en" target="_blank"><img src="ins.png"></a>
-               </td>
-               <td rowspan="4">
-                  <a href="https://www.youtube.com/channel/UC6T6GixAdq1_Xez8t9Krpkw" target="_blank"><img src="yt.png"></a>
-               </td>
-            </tr>
-            <tr>
-               <td><a href="">Privacy Policy</a></td>
-               <td>Phone: +8801515-259145</td>
-            </tr>
-            <tr>
-               <td><a href="">Terms of service</a></td>
-               <td>Email: ahmedsabbir401@gmail.com  </td>
-            </tr>
-            <tr>
-               <td><a href="">Other Affilates</a></td>
-            </tr>
-         </table>
-      </div>
+	<?php include 'bot.php' ?>
 </body>
 </html>

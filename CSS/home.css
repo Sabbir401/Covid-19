@@ -1,0 +1,100 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  overflow-y: scroll;
+}
+body{
+  font-family: sans-serif;
+  overflow: hidden;
+  user-select: none;
+  background-color: #D1DFE2;
+}
+
+.slider-container{
+  width: 800px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-align: center; 
+  box-shadow: 10px 10px 10px grey;
+  z-index: -1;
+}
+
+.image-container{
+  width: 3200px;
+  height: 600px;
+  position: relative;
+  transition: left 2s;
+
+}
+.slider-image{
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+.button-container{
+  top: -20px;
+  position: relative;
+}
+.slider-button{
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+#slider-image-1:target ~ .image-container{
+  left: 0px;
+}
+#slider-image-2:target ~ .image-container{
+  left: -800px;
+}
+#slider-image-3:target ~ .image-container{
+  left: -1600px;
+}
+#slider-image-4:target ~ .image-container{
+  left: -2400px;
+}
+.helpline table tr td{
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 0;
+  font-weight: 700;
+}
+.helpline table tr td:hover{
+  background-color: #2CC4C4;
+}
+.helpline table tr th{
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 0;
+  font-size: 30px;
+}
+
+.process-container{
+  width: 980px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-align: center;
+  background-color: white;
+  box-shadow: 10px 10px 10px grey;
+  text-align: center;
+}
+.process-container table img{
+  height: 100px;
+  width: 70px;
+}
+.process-container table td{
+  width: 300px;
+}
+
