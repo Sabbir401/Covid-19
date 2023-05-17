@@ -18,6 +18,10 @@
 			background-color: #4988C8;
 			border-radius: 5px;
 		}
+		.text{
+			color: white;
+			text-decoration: none;
+		}
 	</style>
 </head>
 <body>
@@ -42,8 +46,9 @@
 		$res=mysqli_query($con,$sql);
 		if($res){
 			while($row=mysqli_fetch_assoc($res)){
+				$id=$row['Id'];
 				echo '<tr>
-				<td>'.$row['Id'].'</td>
+				<td>'.$id.'</td>
 				<td>'.$row['Name'].'</td>
 				<td>'.$row['Username'].'</td>
 				<td>'.$row['Email'].'</td>
@@ -53,8 +58,8 @@
 				<td>'.$row['Degree'].'</td>
 				<td>'.$row['Address'].'</td>
 				<td>
-				<button class="btn btn-primary"><a href="update.php?upid='.$id.'" class="text-light">Update</a></button>
-				<button class="btn btn-danger"><a href="delete.php?delid='.$id.'" class="text-light"> Delete</a></button>
+				<button class="btn btn-primary"><a href="update_doc.php?upid='.$id.'" class="text">Update</a></button>
+				<button class="btn btn-danger"><a href="delete.php?delid='.$id.'" class="text"> Delete</a></button>
 				</td>
 				</tr>';
 			}
