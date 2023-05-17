@@ -25,15 +25,25 @@
 		    $phone=$_POST['phone'];
 		    $des=$_POST['des'];
 		    $add=$_POST['add'];
-		    
-		    $sql= "INSERT INTO `admin_reg`(`Name`, `Username`, `Password`, `C_Password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Email`, `Phone`, `Designation`, `Address`) VALUES ('$name','$uname','$pass','$cpass','$date','$month','$year','$gen','$mail','$phone','$des','$add')";
-		    mysqli_query($con, $sql);
-		    ?>
-		    <script>
-		    	alert("Successfully Resistered.")
-		    	window.location.href = "admin_work.php";
-		    </script>
-		    <?php
+
+		    if($pass == $cpass){
+		    	$sql= "INSERT INTO `admin_reg`(`Name`, `Username`, `Email`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Designation`, `Address`) VALUES ('$name','$uname','$mail','$pass','$cpass','$date','$month','$year','$gen','$phone','$des','$add')";
+			    mysqli_query($con, $sql);
+			    ?>
+			    <script>
+			    	alert("Successfully Resistered.")
+			    	window.location.href = "home.php";
+			    </script>
+			    <?php
+		    }else{
+		    	?>
+			    <script>
+			    	alert("Password Don't match")
+			    	window.location.href = "#";
+			    </script>
+			    <?php
+		    }
+		    	    
 		}
 	?>
 	<form class="box" action="admin_signup.php" method="POST">

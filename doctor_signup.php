@@ -1,3 +1,6 @@
+<?php
+	include 'connect.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,42 @@
 	<link rel="icon" href="logo.png">
 </head>
 <body>
-	<form class="box" action="doctor.php" method="POST">
+	<?php
+		if(isset($_POST['submit'])){
+			$name=$_POST['name'];
+		    $uname=$_POST['uname'];
+		    $pass=$_POST['pass'];
+		    $cpass=$_POST['cpass'];
+		    $date=$_POST['date'];
+		    $month=$_POST['month'];
+		    $year=$_POST['year'];
+		    $gen=$_POST['gen'];
+		    $mail=$_POST['mail'];
+		    $phone=$_POST['phone'];
+		    $degree=$_POST['degree'];
+		    $add=$_POST['add'];
+
+		    if($pass == $cpass){
+		    	$sql= "INSERT INTO `doctor_reg`(`Name`, `Username`, `Email`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Degree`, `Address`) VALUES ('$name','$uname','$mail','$pass','$cpass','$date','$month','$year','$gen','$phone','$degree','$add')";
+			    mysqli_query($con, $sql);
+			    ?>
+			    <script>
+			    	alert("Successfully Resistered.")
+			    	window.location.href = "home.php";
+			    </script>
+			    <?php
+		    }else{
+		    	?>
+			    <script>
+			    	alert("Password Don't match")
+			    	window.location.href = "#";
+			    </script>
+			    <?php
+		    }
+		    	    
+		}
+	?>
+	<form class="box" action="doctor_signup.php" method="POST">
 		<h1>Doctor Registration</h1>
 		<table>
 			<tr>
@@ -18,6 +56,10 @@
 			<tr>
 				<th>Username</th>
 				<td><input type="text" name="uname" placeholder="User Name" required></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="email" name="mail" placeholder="email@gmail.com" required></td>
 			</tr>
 			<tr>
 				<th>Password</th>
@@ -66,17 +108,13 @@
 				</td>
 			</tr>
 			<tr>
-				<th>Email</th>
-				<td><input type="email" name="mail" placeholder="email@gmail.com" required></td>
-			</tr>
-			<tr>
 				<th>Phone</th>
 				<td><input type="number" name="phone" placeholder="xxx-xxx-xxx"  required></td>
 			</tr>
 			<tr>
 				<th>Degree</th>
 				<td>
-					<select name="deg"  required>
+					<select name="degree"  required>
 						<option selected disabled >Degree</option>
 						<option>MBBS</option>
 						<option>FCPS</option>
@@ -94,7 +132,7 @@
 				<td><textarea rows="2" cols="50" name="add" placeholder="Enter your full adress"  required></textarea></td>
 			</tr>
 			<tr>
-				<td style="padding-left: 80px;"><input type="submit" name="" value="Resister"  required></td>
+				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Resister"  required></td>
 				<td><input type="reset" value="Reset"></td>
 			</tr>			
 		</table>
