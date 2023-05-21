@@ -1,0 +1,100 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: grey;
+	padding-bottom: 1000px;
+}
+
+.box{
+	width: 500px;
+	padding: 30px;
+	position: absolute;
+	padding-top: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	text-align: center;
+	border-radius: 30px;
+}
+
+.box h1{
+	color: #45D05A;
+	font-weight: 700;
+}
+.box h3{
+	color: #45D05A;
+	font-weight: 700;
+}
+.box input[type="text"],.box input[type="email"],
+.box input[type="number"],.box table tr td textarea{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 5px auto;
+	text-align: center;
+	border: 3px solid #45D05A;
+	padding: 10px 10px;
+	width: 280px;
+	outline: none;
+	color:  black;
+	border-radius: 24px;
+	font-size: 15px;
+}
+.box table tr td select{
+	text-align: center;
+	border: 3px solid #45D05A;
+	border-radius: 20px;
+	padding: 5px;
+	color: #45D05A;
+}
+
+.box input[type="text"]:focus,.box input[type="number"]:focus,
+.box input[type="email"]:focus,.box input[type="password"]:focus,.box table tr td textarea:focus{
+	border-color: green;
+	background-color: #effaff;
+}
+.box input[type="submit"],.box input[type="reset"]{
+	border:  0;
+	background-color: #45D05A;
+	display: block;
+	margin: 30px auto;
+	text-align: center;
+	padding: 10px 30px;
+	outline: none;
+	color:  white;
+	border-radius: 24px;
+	cursor: pointer;
+}
+.box input[type="submit"]:hover,.box input[type="reset"]:hover{
+	background: green;
+}
+.box table tr th{
+	text-align: left;
+	padding-right: 10px;
+	color: #45D05A;
+	font-size: 20px;
+}
+.box table tr label{
+	color: #45D05A;
+	font-weight: 700;
+}
+
+a:link {
+  color: #45D05A;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #45D05A;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}

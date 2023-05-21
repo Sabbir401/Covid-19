@@ -1,16 +1,26 @@
 <?php
-   include 'nav.php';
+	include 'nav.php';
 ?>
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <title>Covid-19 Vaccination System</title>
-      <link rel="stylesheet" href="CSS/home.css">
-      <link rel="icon" href="img/logo.png">
-   </head>
-   <body>
-      <div class="slider-container">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/home.css">
+	<title></title>
+</head>
+<body>
+	<section class="parallax">
+		<img src="img/hill1.png" id="hill1">
+		<img src="img/hill4.png" id="hill4">
+		<img src="img/hill5.png" id="hill5">
+		<h2 id="text">LDP 2</h2>
+		<img src="img/leaf.png" id="leaf">
+	</section>
+	<script src="CSS/script.js"></script>
+	<section class="sec">
+		<div class="slider-container">
          <span id="slider-image-1"></span>
          <span id="slider-image-2"></span>
          <span id="slider-image-3"></span>
@@ -64,8 +74,9 @@
          </table>
          
       </div>
-      <br><br><br><br>
-   </body>
+      <br><br>
+	</section>
+</body>
 </html>
 <?php
    include 'bot.php';
