@@ -1,3 +1,6 @@
+<?php
+	include 'connect.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +8,47 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Public Registration</title>
 	<link rel="stylesheet" type="text/css" href="CSS/signup.css">
-	<link rel="icon" href="logo.png">
+	<link rel="icon" href="img/logo.png">
 </head>
 <body>
-	<form class="box" action="user.php" method="POST">
+	<?php
+		if(isset($_POST['submit'])){
+			$nid=$_POST['nid'];
+			$name=$_POST['name'];
+		    $mail=$_POST['mail'];
+		    $uname=$_POST['uname'];
+		    $pass=$_POST['pass'];
+		    $cpass=$_POST['cpass'];
+		    $date=$_POST['date'];
+		    $month=$_POST['month'];
+		    $year=$_POST['year'];
+		    $gen=$_POST['gen'];
+		    $phone=$_POST['phone'];
+		    $occu=$_POST['occu'];
+		    $add=$_POST['add'];
+		    $cen=$_POST['center'];
+
+		    if($pass == $cpass){
+		    	$sql= "INSERT INTO `user_reg`(`NID`, `Name`, `Email`, `Username`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Occupation`, `Address`, `Vaccine Center`) VALUES ('$nid','$name','$mail','$uname','$pass','$cpass','$date','$month','$year','$gen','$phone','$occu','$add','$cen')";
+			    mysqli_query($con, $sql);
+			    ?>
+			    <script>
+			    	alert("Successfully Resistered.")
+			    	window.location.href = "home.php";
+			    </script>
+			    <?php
+		    }else{
+		    	?>
+			    <script>
+			    	alert("Password Don't match")
+			    	window.location.href = "#";
+			    </script>
+			    <?php
+		    }
+		    	    
+		}
+	?>
+	<form class="box" action="user_signup.php" method="POST">
 		<h1>Public Registration</h1>
 		<table>
 			<tr>
@@ -80,7 +120,7 @@
 			<tr>
 				<th>Occupation</th>
 				<td>
-					<select id="" name="occu">
+					<select name="occu">
 						<option selected disabled >--Select--</option>
 						<option>All Government Officer</option>
 						<option>Bank Employee</option>
@@ -117,7 +157,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="padding-left: 80px;"><input type="submit" name="" value="Resister"></td>
+				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Resister"></td>
 				<td><input type="reset" value="Reset"></td>
 			</tr>			
 		</table>

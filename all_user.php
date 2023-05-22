@@ -32,35 +32,39 @@
 	<table style="width:97%; margin: 10px;">
 		<tr>
 			<th>ID</th>
+			<th>NID</th>
 			<th>Name</th>
-			<th>Username</th> 
 			<th>Email</th>
+			<th>Username</th> 			
 			<th>Birthdate</th>
 			<th>Gender</th> 
 			<th>Phone</th>
-			<th>Degree</th>
+			<th>Occupation</th>
 			<th>Address</th>
+			<th>Center</th>
 			<th>Operation</th>
 		</tr>
 		<?php
-		$sql= "Select * from doctor_reg";
+		$sql= "Select * from user_reg";
 		$res=mysqli_query($con,$sql);
 		if($res){
 			while($row=mysqli_fetch_assoc($res)){
 				$id=$row['Id'];
 				echo '<tr>
 				<td>'.$id.'</td>
+				<td>'.$row['NID'].'</td>
 				<td>'.$row['Name'].'</td>
-				<td>'.$row['Username'].'</td>
 				<td>'.$row['Email'].'</td>
+				<td>'.$row['Username'].'</td>
 				<td>'.$row['B_Date'].'-'.$row['B_Month'].'-'.$row['B_Year'].'</td>
 				<td>'.$row['Gender'].'</td>
 				<td>'.$row['Phone'].'</td>
-				<td>'.$row['Degree'].'</td>
+				<td>'.$row['Occupation'].'</td>
+				<td>'.$row['Vaccine Center'].'</td>
 				<td>'.$row['Address'].'</td>
 				<td>
-				<button class="btn btn-primary"><a href="update_doc.php?upid='.$id.'" class="text">Update</a></button>
-				<button class="btn btn-danger"><a href="del_doc.php?delid='.$id.'" class="text"> Delete</a></button>
+				<button class="btn btn-primary"><a href="update_user.php?upid='.$id.'" class="text">Update</a></button>
+				<button class="btn btn-danger"><a href="del_user.php?delid='.$id.'" class="text"> Delete</a></button>
 				</td>
 				</tr>';
 			}

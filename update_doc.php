@@ -1,13 +1,14 @@
 <?php
 	include 'connect.php';
-	$id=$_GET['upid'];
-	$sql1="SELECT * FROM `doctor_reg` WHERE id=$id";
+
+	$Id=$_GET['upid'];
+	$sql1="SELECT * FROM `doctor_reg` WHERE Id=$Id";
 	$res=mysqli_query($con,$sql1);
 	$row=mysqli_fetch_assoc($res);
 	$name=$row['Name'];
 	$uname=$row['Username'];
 	$email=$row['Email'];
-	$pass=$row['Password'];
+	$pass=$row['C_Password'];
 	$cpass=$row['C_password'];
 	$date=$row['B_Date'];
 	$month=$row['B_Month'];
@@ -32,12 +33,12 @@
 	    $add=$_POST['add'];
 
 	    if($pass == $cpass){
-	    	$sql= "UPDATE `doctor_reg` SET `Id`=$id `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `B_Month`='$month', `B_Year`='$year', `Gender`='$gen', `Phone`='$phone', `Degree`='$degree', `Address`='$add' WHERE Id=$id";
+	    	$sql= "UPDATE `doctor_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `B_Month`='$month', `B_Year`='$year', `Gender`='$gen', `Phone`='$phone', `Degree`='$degree', `Address`='$add' WHERE Id=$Id";
 		    mysqli_query($con, $sql);
 		    ?>
 		    <script>
 		    	alert("Successfully Updated.")
-		    	window.location.href = "#";
+		    	window.location.href = "all_doc.php";
 		    </script>
 		    <?php
 	    }else{
@@ -61,7 +62,7 @@
 	<link rel="icon" href="img/logo.png">
 </head>
 <body>
-	<form class="box" action="doctor_signup.php" method="POST">
+	<form class="box" method="POST">
 		<h1>Update Doctor Information</h1>
 		<table>
 			<tr>
@@ -147,7 +148,7 @@
 				<td><textarea rows="2" cols="50" name="add" placeholder="Enter your full adress" value='<?php echo $add;?>' required></textarea></td>
 			</tr>
 			<tr>
-				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Resister"  required></td>
+				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Update"  required></td>
 				<td><input type="reset" value="Reset"></td>
 			</tr>			
 		</table>

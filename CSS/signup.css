@@ -10,11 +10,11 @@ html {
 }
 .box{
 	width: 500px;
-	padding: 30px;
+	padding: 20px;
 	position: absolute;
-	padding-top: 10px;
-	top: 50%;
-	left: 50%;
+	padding-top: 5px;
+	top: 60%;
+	left: 55%;
 	transform: translate(-50%, -50%);
 	background: white;
 	text-align: center;
