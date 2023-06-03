@@ -1,8 +1,9 @@
 <?php
 	include 'connect.php';
+	session_start();
 
-	$Id=$_GET['upid'];
-	$sql1="SELECT * FROM `doctor_reg` WHERE Id=$Id";
+	$Uname=$_SESSION["Uname"];
+	$sql1="SELECT * FROM `admin_reg` WHERE Username='$Uname'";
 	$res=mysqli_query($con,$sql1);
 	$row=mysqli_fetch_assoc($res);
 	$name=$row['Name'];
@@ -15,7 +16,7 @@
 	$year=$row['B_Year'];
 	$gen=$row['Gender'];
 	$phone=$row['Phone'];
-	$degree=$row['Degree'];
+	$des=$row['Designation'];
 	$add=$row['Address'];
 
 	if(isset($_POST['submit'])){
@@ -29,23 +30,23 @@
 	    $gen=$_POST['gen'];
 	    $mail=$_POST['mail'];
 	    $phone=$_POST['phone'];
-	    $degree=$_POST['degree'];
+	    $des=$_POST['des'];
 	    $add=$_POST['add'];
 
 	    if($pass == $cpass){
-	    	$sql= "UPDATE `doctor_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `B_Month`='$month', `B_Year`='$year', `Gender`='$gen', `Phone`='$phone', `Degree`='$degree', `Address`='$add' WHERE Id=$Id";
+	    	$sql= "UPDATE `admin_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `B_Month`='$month', `B_Year`='$year', `Gender`='$gen', `Phone`='$phone', `Designation`='$des', `Address`='$add' WHERE Username='$Uname'";
 		    mysqli_query($con, $sql);
 		    ?>
 		    <script>
 		    	alert("Successfully Updated.")
-		    	window.location.href = "all_doc.php";
+		    	window.location.href = "admin_work.php";
 		    </script>
 		    <?php
 	    }else{
 	    	?>
 		    <script>
 		    	alert("Password Don't match")
-		    	window.location.href = "update_doc.php";
+		    	window.location.href = "update_admin.php";
 		    </script>
 		    <?php
 	    }
@@ -128,17 +129,14 @@
 				<td><input type="number" name="phone" placeholder="xxx-xxx-xxx" value='<?php echo $phone;?>'  required></td>
 			</tr>
 			<tr>
-				<th>Degree</th>
+				<th>Designation</th>
 				<td>
-					<select name="degree" value='<?php echo $degree;?>' required>
-						<option selected disabled >Degree</option>
-						<option>MBBS</option>
-						<option>FCPS</option>
-						<option>BMBS</option>
-						<option>MBChC</option>
-						<option>MBBCh</option>
-						<option>MD</option>
-						<option>DO</option>
+					<select name="des" value='<?php echo $des;?>' required>
+						<option selected disabled >--Designation--</option>
+						<option>Chief Doctor </option>
+						<option>Manager</option>
+						<option>Receptionist</option>
+						<option>Vaccine Committee Member</option>
 
 					</select>
 				</td>

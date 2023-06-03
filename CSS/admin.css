@@ -74,3 +74,42 @@ nav:hover{
 	position: absolute;
 	bottom: 0;
 }
+
+.Container{
+	width: 100%;
+	margin-left: 20%;
+	margin-top: 5%;
+	display: flex;
+}
+.Container .reg {
+	width: 15%;
+	border: 3px solid black;
+	border-radius: 7px;
+	font-size: 24px;
+	text-align: center;
+	margin: 10px;
+}
+.Container .vac {
+	width: 15%;
+	border: 3px solid black;
+	border-radius: 7px;
+	font-size: 24px;
+	text-align: center;
+	margin: 10px;
+}
+.Container .doc {
+	width: 15%;
+	border: 3px solid black;
+	border-radius: 7px;
+	font-size: 24px;
+	text-align: center;
+	margin: 10px;
+}
+.Container .fed {
+	width: 15%;
+	border: 3px solid black;
+	border-radius: 7px;
+	font-size: 24px;
+	text-align: center;
+	margin: 10px;
+}

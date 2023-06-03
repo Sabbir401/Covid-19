@@ -1,5 +1,6 @@
 <?php
 	include 'connect.php';
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Login</title>
 	<link rel="stylesheet" type="text/css" href="CSS/login.css">
-	<link rel="icon" href="logo.png">
+	<link rel="icon" href="img/logo.png">
 </head>
 <body>
 	<?php
@@ -20,6 +21,7 @@
 		    $query = mysqli_query($con, $sql);
 		    $row = mysqli_fetch_assoc($query);
 		    if($row){
+		    	$_SESSION["Uname"] = "$uname";
 		    	?>
 			    <script>
 			    	alert("Successfully Loged in")
