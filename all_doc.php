@@ -23,13 +23,18 @@
 			color: white;
 			text-decoration: none;
 		}
+		input[type="text"]{
+		padding: 10px;
+		border-radius: 10px;
+		width: 30%;
+		}
 	</style>
 </head>
 <body>
-
 	<h1 style="text-align: center; color: green; font-size: 40px;">All Register Doctors</h1>
+	<input type="text" name="" id="myInput" placeholder="Enter Name" onkeyup="searchFun()">
 
-	<table style="width:97%; margin: 10px;">
+	<table style="width:97%; margin: 10px;" id="myTable">
 		<tr>
 			<th>ID</th>
 			<th>Name</th>
@@ -69,6 +74,26 @@
 		
 	</table>
 
+	<script type="text/javascript">
+		const searchFun = () =>{
+			let filter = document.getElementById('myInput').value.toUpperCase();
+			let myTable = document.getElementById('myTable');
+			let tr = myTable.getElementsByTagName('tr');
+
+			for(var i=0;i<tr.length;i++){
+				let td = tr[i].getElementsByTagName('td')[1];
+
+				if(td){
+					let textvalue = td.textContent || td.innerHTML;
+					if(textvalue.toUpperCase().indexOf(filter) > -1){
+						tr[i].style.display = "";
+					}else{
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	</script>
 </body>
 </html>
 

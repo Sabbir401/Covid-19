@@ -38,46 +38,70 @@
 				<i class="fas fa-chart-bar"></i>
 				<span class="nav-item">Doctor's Information</span>
 			</a></li>
-			<li><a href="#">
+			<li><a href="manage_doc.php">
 				<i class="fas fa-tasks"></i>
 				<span class="nav-item">Manage Doctor</span>
 			</a></li>
-			<li><a href="#">
+			<li><a href="all_doc_post.php">
 				<i class="fas fa-cog"></i>
 				<span class="nav-item">All Doctor's Post</span>
 			</a></li>
-			<li><a href="#">
+			<li><a href="show_feedback.php">
 				<i class="fas fa-question-circle"></i>
 				<span class="nav-item">Show All Feedback</span>
 			</a></li>
-			<li><a href="admin_login.php" class="logout">
+			<li><a href="logout.php" class="logout">
 				<i class="fas fa-sign-out-alt"></i>
 				<span class="nav-item">Log out</span>
-				<?php 
-					// session_unset();
-					// session_destroy();
-				?>
-			</a></li>
+				</a>
+			</li>
 		</ul>
 	</nav>
 	<div class="Container">
 		<div class="reg">
-			<p>Total Registered Public</p><br>
-			<?php
-				$sql = "SELECT COUNT(Id) FROM admin_reg;";
-		    	$query = mysqli_query($con, $sql);
-		    	$row = mysqli_fetch_assoc($query);
-		    	echo $row;
-			?>
+			<p>Total Registered Public</p>
+			<div class="data">
+				<?php
+					$sql = "SELECT COUNT(Id) AS count FROM user_reg;";
+					$query = mysqli_query($con, $sql);
+					$row = mysqli_fetch_assoc($query);
+					echo $row['count'];
+				?>
+			</div>
+			
 		</div>
 		<div class="vac">
 			<p>Total Vaccinated Public</p>
+			<div class="data">
+				<?php
+					$sql = "SELECT COUNT(Id) AS count FROM user_reg WHERE Status='YES';";
+					$query = mysqli_query($con, $sql);
+					$row = mysqli_fetch_assoc($query);
+					echo $row['count'];
+				?>
+			</div>
 		</div>
 		<div class="doc">
 			<p>Total Registered Doctor</p>
+			<div class="data">
+				<?php
+					$sql = "SELECT COUNT(Id) AS count FROM doctor_reg;";
+					$query = mysqli_query($con, $sql);
+					$row = mysqli_fetch_assoc($query);
+					echo $row['count'];
+				?>
+			</div>	
 		</div>
 		<div class="fed">
 			<p>Feedback</p>
+			<div class="data">
+				<?php
+					$sql = "SELECT COUNT(*) AS count FROM feedback;";
+					$query = mysqli_query($con, $sql);
+					$row = mysqli_fetch_assoc($query);
+					echo $row['count'];
+				?>
+			</div>
 		</div>
 	</div>
 

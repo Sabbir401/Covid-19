@@ -15,7 +15,7 @@
 		<img src="img/hill1.png" id="hill1">
 		<img src="img/hill4.png" id="hill4">
 		<img src="img/hill5.png" id="hill5">
-		<h2 id="text">LDP 2</h2>
+		<h2 id="text">IDP II</h2>
 		<img src="img/leaf.png" id="leaf">
 	</section>
 	<script src="CSS/script.js"></script>

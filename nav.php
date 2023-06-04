@@ -32,8 +32,8 @@
                   <li><a href="user_login.php" target="_blank">Public</a></li>
                </ul>
             </li>
-            <li><a href="faq.php" target="_blank">FAQ</a></li>
-            <li><a href="feedback.php" target="_blank">Feedback</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="feedback.php">Feedback</a></li>
          </ul>
       </nav>
    </body>
