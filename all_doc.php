@@ -58,7 +58,7 @@
 				<td>'.$row['Name'].'</td>
 				<td>'.$row['Username'].'</td>
 				<td>'.$row['Email'].'</td>
-				<td>'.$row['B_Date'].'-'.$row['B_Month'].'-'.$row['B_Year'].'</td>
+				<td>'.$row['B_Date'].'</td>
 				<td>'.$row['Gender'].'</td>
 				<td>'.$row['Phone'].'</td>
 				<td>'.$row['Degree'].'</td>

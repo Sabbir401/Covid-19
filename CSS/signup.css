@@ -29,7 +29,7 @@ html {
 	color: #45D05A;
 	font-weight: 700;
 }
-.box input[type="text"],.box input[type="password"],.box input[type="email"],
+.box input[type="text"],.box input[type="password"],.box input[type="email"],.box input[type="date"],
 .box input[type="number"],.box table tr td textarea{
 	border: 0;
 	background: none;

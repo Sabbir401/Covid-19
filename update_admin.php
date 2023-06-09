@@ -12,8 +12,7 @@
 	$pass=$row['Password'];
 	$cpass=$row['C_password'];
 	$date=$row['B_Date'];
-	$month=$row['B_Month'];
-	$year=$row['B_Year'];
+	
 	$gen=$row['Gender'];
 	$phone=$row['Phone'];
 	$des=$row['Designation'];
@@ -25,8 +24,6 @@
 	    $pass=$_POST['pass'];
 	    $cpass=$_POST['cpass'];
 	    $date=$_POST['date'];
-	    $month=$_POST['month'];
-	    $year=$_POST['year'];
 	    $gen=$_POST['gen'];
 	    $mail=$_POST['mail'];
 	    $phone=$_POST['phone'];
@@ -34,7 +31,7 @@
 	    $add=$_POST['add'];
 
 	    if($pass == $cpass){
-	    	$sql= "UPDATE `admin_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `B_Month`='$month', `B_Year`='$year', `Gender`='$gen', `Phone`='$phone', `Designation`='$des', `Address`='$add' WHERE Username='$Uname'";
+	    	$sql= "UPDATE `admin_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `Gender`='$gen', `Phone`='$phone', `Designation`='$des', `Address`='$add' WHERE Username='$Uname'";
 		    mysqli_query($con, $sql);
 		    ?>
 		    <script>
@@ -88,33 +85,7 @@
 			</tr>
 			<tr>
 				<th>Date of Birth</th>
-				<td>
-					<select id="" name="date" value='<?php echo $date;?>' required>
-					 <option selected disabled >Day</option>
-					<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
-					</select>
-					<select id="" name="month" value='<?php echo $month;?>'  required>
-					 <option selected disabled >Month</option>
-					<option>January</option>
-					<option>February</option>
-					<option>March</option>
-					<option>April</option>
-					<option>May</option>
-					<option>June</option>
-					<option>July</option>
-					<option>August</option>
-					<option>September</option>
-					<option>October</option>
-					<option>November</option>
-					<option>December</option>
-					</select>
-					<select id="" name="year" value='<?php echo $year;?>' required>
-					 <option selected disabled >Year</option>
-					<?php for($i=1990;$i<=2021;$i++) echo "<option>$i</option>"; ?>
-					</select>
-				</td>
-
-					
+				<td><input type="date" name="date" value='<?php echo $cpass;?>' required></td>
 			</tr>
 			<tr>
 				<th><br>Gender<br></th>

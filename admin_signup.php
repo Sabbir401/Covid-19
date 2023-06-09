@@ -18,8 +18,8 @@
 		    $pass=$_POST['pass'];
 		    $cpass=$_POST['cpass'];
 		    $date=$_POST['date'];
-		    $month=$_POST['month'];
-		    $year=$_POST['year'];
+		    // $month=$_POST['month'];
+		    // $year=$_POST['year'];
 		    $gen=$_POST['gen'];
 		    $mail=$_POST['mail'];
 		    $phone=$_POST['phone'];
@@ -35,7 +35,7 @@
 		    if(preg_match($pattern1, $mail) or preg_match($pattern2, $mail) or preg_match($pattern3, $mail) or preg_match($pattern4, $mail)){
 		    	if(preg_match($pattern, $pass)){
 				    if($pass == $cpass){
-				    	$sql= "INSERT INTO `admin_reg`(`Name`, `Username`, `Email`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Designation`, `Address`) VALUES ('$name','$uname','$mail','$pass','$cpass','$date','$month','$year','$gen','$phone','$des','$add')";
+				    	$sql= "INSERT INTO `admin_reg`(`Name`, `Username`, `Email`, `Password`, `C_password`, `B_Date`, `Gender`, `Phone`, `Designation`, `Address`) VALUES ('$name','$uname','$mail','$pass','$cpass','$date','$gen','$phone','$des','$add')";
 					    mysqli_query($con, $sql);
 					    ?>
 					    <script>
@@ -90,7 +90,8 @@
 			</tr>
 			<tr>
 				<th>Date of Birth</th>
-				<td>
+				<td><input type="date" name="date" required></td>
+				<!-- <td>
 					<select id="" name="date"  required>
 					 <option selected disabled >Day</option>
 					<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
@@ -114,7 +115,7 @@
 					 <option selected disabled >Year</option>
 					<?php for($i=1990;$i<=2021;$i++) echo "<option>$i</option>"; ?>
 					</select>
-				</td>
+				</td> -->
 
 					
 			</tr>
@@ -151,7 +152,7 @@
 				<td><textarea rows="2" cols="50" name="add" placeholder="Enter your full adress"  required></textarea></td>
 			</tr>
 			<tr>
-				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Resister"  required></td>
+				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Register"  required></td>
 				<td><input type="reset" value="Reset"></td>
 			</tr>			
 		</table>

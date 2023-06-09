@@ -20,8 +20,8 @@
 		    $pass=$_POST['pass'];
 		    $cpass=$_POST['cpass'];
 		    $date=$_POST['date'];
-		    $month=$_POST['month'];
-		    $year=$_POST['year'];
+		    // $month=$_POST['month'];
+		    // $year=$_POST['year'];
 		    $gen=$_POST['gen'];
 		    $phone=$_POST['phone'];
 		    $occu=$_POST['occu'];
@@ -37,7 +37,7 @@
 		    if(preg_match($pattern1, $mail) or preg_match($pattern2, $mail) or preg_match($pattern3, $mail) or preg_match($pattern4, $mail)){
 		    	if(preg_match($pattern, $pass)){
 				    if($pass == $cpass){
-				    	$sql= "INSERT INTO `user_reg`(`NID`, `Name`, `Email`, `Username`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Occupation`, `Address`, `Vaccine Center`) VALUES ('$nid','$name','$mail','$uname','$pass','$cpass','$date','$month','$year','$gen','$phone','$occu','$add','$cen')";
+				    	$sql= "INSERT INTO `user_reg`(`NID`, `Name`, `Email`, `Username`, `Password`, `C_password`, `B_Date`, `Gender`, `Phone`, `Occupation`, `Address`, `Vaccine Center`) VALUES ('$nid','$name','$mail','$uname','$pass','$cpass','$date','$gen','$phone','$occu','$add','$cen')";
 					    mysqli_query($con, $sql);
 					    ?>
 					    <script>
@@ -100,7 +100,8 @@
 			</tr>
 			<tr>
 				<th>Date of Birth</th>
-				<td>
+				<td><input type="date" name="date" required></td>
+				<!-- <td>
 					<select id="" name="date">
 					 <option selected disabled >Day</option>
 					<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
@@ -124,7 +125,7 @@
 					 <option selected disabled >Year</option>
 					<?php for($i=1990;$i<=2021;$i++) echo "<option>$i</option>"; ?>
 					</select>
-				</td>
+				</td> -->
 
 					
 			</tr>
@@ -180,7 +181,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Resister"></td>
+				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Register"></td>
 				<td><input type="reset" value="Reset"></td>
 			</tr>			
 		</table>

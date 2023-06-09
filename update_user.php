@@ -10,8 +10,7 @@
 	$pass=$row['C_password'];
 	$cpass=$row['C_password'];
 	$date=$row['B_Date'];
-	$month=$row['B_Month'];
-	$year=$row['B_Year'];
+	
 	$gen=$row['Gender'];
 	$phone=$row['Phone'];
 	$occu=$row['Occupation'];
@@ -25,8 +24,7 @@
 	    $pass=$_POST['pass'];
 	    $cpass=$_POST['cpass'];
 	    $date=$_POST['date'];
-	    $month=$_POST['month'];
-	    $year=$_POST['year'];
+	    
 	    $gen=$_POST['gen'];
 	    $phone=$_POST['phone'];
 	    $occu=$_POST['occu'];
@@ -34,7 +32,7 @@
 	    $cen=$_POST['center'];
 
 	    if($pass == $cpass){
-	    	$sql = "UPDATE `user_reg` SET `Name`='$name', `Email`='$mail', `Username`='$uname', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `B_Month`='$month', `B_Year`='$year', `Gender`='$gen', `Phone`='$phone', `Occupation`='$occu', `Address`='$add', `Vaccine Center`='$cen' WHERE Id=$id";
+	    	$sql = "UPDATE `user_reg` SET `Name`='$name', `Email`='$mail', `Username`='$uname', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `Gender`='$gen', `Phone`='$phone', `Occupation`='$occu', `Address`='$add', `Vaccine Center`='$cen' WHERE Id=$id";
 		    mysqli_query($con, $sql);
 		    ?>
 		    <script>
@@ -62,16 +60,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.rtl.min.css">
-    <style>
-    	.container table{
-    		padding: 10px;
-    		margin: 10px;
-    	}
-    	.container table tr th{
-    		padding: 10px;
-    		margin: 10px;
-    	}
-    </style>
+    <link rel="stylesheet" type="text/css" href="CSS/signup.css">
+
 
 
 </head>
@@ -101,32 +91,7 @@
 			</tr>
 			<tr>
 				<th>Date of Birth</th>
-				<td>
-					<select id="" name="date">
-					 <option selected disabled >Day</option>
-					<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
-					</select>
-					<select id="" name="month">
-					 <option selected disabled >Month</option>
-					<option>January</option>
-					<option>February</option>
-					<option>March</option>
-					<option>April</option>
-					<option>May</option>
-					<option>June</option>
-					<option>July</option>
-					<option>August</option>
-					<option>September</option>
-					<option>October</option>
-					<option>November</option>
-					<option>December</option>
-					</select>
-					<select id="" name="year">
-					 <option selected disabled >Year</option>
-					<?php for($i=1990;$i<=2021;$i++) echo "<option>$i</option>"; ?>
-					</select>
-				</td>
-
+				<td><input type="date" name="date" value='<?php echo $cpass;?>' required></td>
 					
 			</tr>
 			<tr>
