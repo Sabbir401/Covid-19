@@ -26,24 +26,47 @@
 		    $des=$_POST['des'];
 		    $add=$_POST['add'];
 
-		    if($pass == $cpass){
-		    	$sql= "INSERT INTO `admin_reg`(`Name`, `Username`, `Email`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Designation`, `Address`) VALUES ('$name','$uname','$mail','$pass','$cpass','$date','$month','$year','$gen','$phone','$des','$add')";
-			    mysqli_query($con, $sql);
-			    ?>
-			    <script>
-			    	alert("Successfully Resistered.")
-			    	window.location.href = "home.php";
-			    </script>
-			    <?php
+		    $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+		    $pattern1 = "/^[a-z0-9_.+-]+@gmail\.com$/";
+		    $pattern2 = "/^[a-z0-9_.+-]+@yahoo\.com$/";
+		    $pattern3 = "/^[a-z0-9_.+-]+@outlook\.com$/";
+		    $pattern4 = "/^[a-z0-9_.+-]+@hotmail\.com$/";
+
+		    if(preg_match($pattern1, $mail) or preg_match($pattern2, $mail) or preg_match($pattern3, $mail) or preg_match($pattern4, $mail)){
+		    	if(preg_match($pattern, $pass)){
+				    if($pass == $cpass){
+				    	$sql= "INSERT INTO `admin_reg`(`Name`, `Username`, `Email`, `Password`, `C_password`, `B_Date`, `B_Month`, `B_Year`, `Gender`, `Phone`, `Designation`, `Address`) VALUES ('$name','$uname','$mail','$pass','$cpass','$date','$month','$year','$gen','$phone','$des','$add')";
+					    mysqli_query($con, $sql);
+					    ?>
+					    <script>
+					    	alert("Successfully Resistered.")
+					    	window.location.href = "home.php";
+					    </script>
+					    <?php
+				    }else{
+				    	?>
+					    <script>
+					    	alert("Password Don't match")
+					    	window.location.href = "#";
+					    </script>
+					    <?php
+				    }
+				}else{
+					?>
+				    <script>
+				    	alert("Invalid Password Format.\n1.At Least 8 character\n2.Contains at least one lower and one upper case\n3.Contains at least one digit\n4.Contains at least one special character")
+				    	window.location.href = "#";
+				    </script>
+				    <?php
+				}
 		    }else{
 		    	?>
-			    <script>
-			    	alert("Password Don't match")
-			    	window.location.href = "#";
-			    </script>
-			    <?php
-		    }
-		    	    
+				    <script>
+				    	alert("Invalid Mail Format")
+				    	window.location.href = "#";
+				    </script>
+				    <?php
+		    }	    
 		}
 	?>
 	<form class="box" action="admin_signup.php" method="POST">
