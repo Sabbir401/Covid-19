@@ -62,7 +62,7 @@
 		    }else{
 		    	?>
 				    <script>
-				    	alert("Invalid Mail Format")
+				    	alert("Invalid Email Format")
 				    	window.location.href = "#";
 				    </script>
 				    <?php

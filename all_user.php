@@ -28,11 +28,20 @@
 		border-radius: 10px;
 		width: 30%;
 		}
+		.bt{
+			background-color: #88CEEB;
+		    border: 1px solid black;
+		    border-radius: 5px;
+		    padding: 5px;
+		    color: black;
+		    cursor: pointer;
+		    margin: 10px;
+		}
 	</style>
 </head>
 <body>
-
-	<h1 style="text-align: center; color: green; font-size: 40px;">All Register Doctors</h1>
+	<a href="admin_work.php"><button class="bt">Back</button></a>
+	<h1 style="text-align: center; color: green; font-size: 40px;">All Register User</h1>
 	<input type="text" name="" id="myInput" placeholder="Enter Name" onkeyup="searchFun()">
 	<table style="width:97%; margin: 10px;" id="myTable">
 		<tr>

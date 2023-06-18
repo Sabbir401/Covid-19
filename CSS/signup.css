@@ -13,8 +13,8 @@ html {
 	padding: 20px;
 	position: absolute;
 	padding-top: 5px;
-	top: 60%;
-	left: 55%;
+	top: 50%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 	background: white;
 	text-align: center;
@@ -99,4 +99,13 @@ a:hover {
   color: green;
   background-color: transparent;
   text-decoration: underline;
+}
+.btn{
+	background-color: #88CEEB;
+	border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  cursor: pointer;
+  margin: 10px;
 }

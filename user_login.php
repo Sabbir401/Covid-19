@@ -20,7 +20,7 @@
 		    $sql = "SELECT * FROM `user_reg` WHERE Username = '$uname' && Password = '$pass';";
 		    $query = mysqli_query($con, $sql);
 		    $row = mysqli_fetch_assoc($query);
-		    if($row){
+		    if($uname == $row["Username"]){
 		    	$_SESSION["Uname"] = "$uname";
 		    	?>
 			    <script>
@@ -41,7 +41,7 @@
 	?>
 
 	<form class="box" action="user_login.php" method="POST">
-		<h1>Admin Login</h1>
+		<h1>User Login</h1>
 		<input type="text" name="uname" placeholder="User Name"></input>
 		<input type="password" name="pass" placeholder="Password">
 		<input type="submit" name="submit" value="Login">

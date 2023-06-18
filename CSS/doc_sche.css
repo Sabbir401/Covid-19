@@ -1,0 +1,28 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+body{
+	background: #dfe9f5;
+}
+
+.Container{
+	width: 100%;
+	display: flex;
+	text-align: center;
+}
+.welcome {
+	margin-left: 25%;
+	margin-top: 15%;
+	width: 50%;
+	border: 3px solid black;
+	border-radius: 7px;
+	font-size: 25px;
+	text-align: center;
+}
+table{
+	text-align: center;
+}

@@ -1,5 +1,6 @@
 <?php
 	include 'connect.php';
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,8 @@
 		    $sql = "SELECT * FROM `doctor_reg` WHERE Username = '$uname' && Password = '$pass';";
 		    $query = mysqli_query($con, $sql);
 		    $row = mysqli_fetch_assoc($query);
-		    if($row){
+		    if($uname == $row["Username"]){
+		    	$_SESSION["Uname"] = "$uname";
 		    	?>
 			    <script>
 			    	alert("Successfully Loged in")

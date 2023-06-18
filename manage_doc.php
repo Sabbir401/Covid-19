@@ -36,6 +36,7 @@
 		    }	    	    
 		}
 	?>
+	<a href="admin_work.php"><button class="btn">Back</button></a>
 	<form class="box" action="manage_doc.php" method="POST">
 		<h1>Assign Doctor</h1>
 		<table>
@@ -63,32 +64,7 @@
 			</tr>
 			<tr>
 				<th>Date</th>
-				<td>
-					<select id="" name="date"  required>
-					 <option selected disabled >Day</option>
-					<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
-					</select>
-					<select id="" name="month"  required>
-					 <option selected disabled >Month</option>
-					<option>January</option>
-					<option>February</option>
-					<option>March</option>
-					<option>April</option>
-					<option>May</option>
-					<option>June</option>
-					<option>July</option>
-					<option>August</option>
-					<option>September</option>
-					<option>October</option>
-					<option>November</option>
-					<option>December</option>
-					</select>
-					<select id="" name="year"  required>
-					 <option selected disabled >Year</option>
-					<?php for($i=2020;$i<=2025;$i++) echo "<option>$i</option>"; ?>
-					</select>
-				</td>			
-			</tr>
+				<td><input type="date" name="date" required></td>
 			<tr>
 				<th>Time</th>
 				<td>
@@ -113,7 +89,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Resister"  required></td>
+				<td style="padding-left: 80px;"><input type="submit" name="submit" value="Register"  required></td>
 				<td><input type="reset" value="Reset"></td>
 			</tr>			
 		</table>

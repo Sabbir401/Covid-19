@@ -7,6 +7,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.rtl.min.css">
+	<link rel="icon" href="img/logo.png">
+	<title>Assign Doctor</title>
 	<style>
 		table {
 			font-size: 18px;
@@ -42,34 +44,36 @@
 			border-radius: 24px;
 			cursor: pointer;
 		}
+		input[type="date"]{
+			border: 0;
+			background: none;
+			margin: 5px auto;
+			text-align: center;
+			border: 3px solid #45D05A;
+			padding: 8px 8px;
+			width: 220px;
+			outline: none;
+			color:  black;
+			border-radius: 24px;
+			font-size: 15px;
+		}
+		.btn{
+			background-color: #88CEEB;
+		    border: 1px solid black;
+		    border-radius: 5px;
+		    padding: 5px;
+		    color: black;
+		    cursor: pointer;
+		    margin: 10px;
+		}
 
 	</style>
 </head>
 <body>
+	<a href="admin_work.php"><button class="btn">Back</button></a>
 	<form action="all_doc_post.php" method="POST">
-		<select id="" name="date">
-			<option selected disabled >Day</option>
-			<?php for($i=1;$i<=31;$i++) echo "<option>$i</option>"; ?>
-		</select>
-		<select id="" name="month">
-			<option selected disabled >Month</option>
-			<option>January</option>
-			<option>February</option>
-			<option>March</option>
-			<option>April</option>
-			<option>May</option>
-			<option>June</option>
-			<option>July</option>
-			<option>August</option>
-			<option>September</option>
-			<option>October</option>
-			<option>November</option>
-			<option>December</option>
-		</select>
-		<select id="" name="year">
-			<option selected disabled >Year</option>
-			<?php for($i=2020;$i<=2025;$i++) echo "<option>$i</option>"; ?>
-		</select>
+		<td><input type="date" name="date" required></td>
+		
 		<input type="submit" name="submit" value="Search">
 	</form>
 	<h1 style="text-align: center; color: green; font-size: 40px;">All Assigned Doctors</h1>
@@ -84,17 +88,15 @@
 		<?php
 		if(isset($_POST['submit'])){
 			$date=$_POST['date'];
-			$month=$_POST['month'];
-			$year=$_POST['year'];
 
-			$sql= "SELECT * from manage_doc WHERE Date='$date' AND Month='$month' AND Year='$year'";
+			$sql= "SELECT * from manage_doc WHERE Date='$date' ";
 			$res=mysqli_query($con,$sql);
 			if($res){
 				while($row=mysqli_fetch_assoc($res)){
 					echo '<tr>
 					<td>'.$row['Admin Name'].'</td>
 					<td>'.$row['Doctor Name'].'</td>
-					<td>'.$row['Date'].'-'.$row['Month'].'-'.$row['Year'].'</td>
+					<td>'.$row['Date'].'</td>
 					<td>'.$row['Time'].'</td>
 					<td>'.$row['Center'].'</td>
 					</tr>';

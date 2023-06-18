@@ -23,10 +23,19 @@
 			color: white;
 			text-decoration: none;
 		}
+		.btn{
+			background-color: #88CEEB;
+		    border: 1px solid black;
+		    border-radius: 5px;
+		    padding: 5px;
+		    color: black;
+		    cursor: pointer;
+		    margin: 10px;
+		}
 	</style>
 </head>
 <body>
-
+	<a href="admin_work.php"><button class="btn">Back</button></a>
 	<h1 style="text-align: center; color: green; font-size: 40px;">All Feedbacks</h1>
 
 	<table style="width:97%; margin: 10px;">

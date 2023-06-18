@@ -98,3 +98,12 @@ a:hover {
   background-color: transparent;
   text-decoration: underline;
 }
+.btn{
+	background-color: #88CEEB;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  cursor: pointer;
+  margin: 10px;
+}

@@ -20,7 +20,7 @@
 		    $sql = "SELECT * FROM `admin_reg` WHERE Username = '$uname' && Password = '$pass';";
 		    $query = mysqli_query($con, $sql);
 		    $row = mysqli_fetch_assoc($query);
-		    if($row){
+		    if($uname == $row["Username"]){
 		    	$_SESSION["Uname"] = "$uname";
 		    	?>
 			    <script>

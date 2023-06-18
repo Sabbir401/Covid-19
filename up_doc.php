@@ -3,7 +3,7 @@
 	session_start();
 
 	$Uname=$_SESSION["Uname"];
-	$sql1="SELECT * FROM `admin_reg` WHERE Username='$Uname'";
+	$sql1="SELECT * FROM `doctor_reg` WHERE Username='$Uname'";
 	$res=mysqli_query($con,$sql1);
 	$row=mysqli_fetch_assoc($res);
 	$name=$row['Name'];
@@ -15,7 +15,7 @@
 	
 	$gen=$row['Gender'];
 	$phone=$row['Phone'];
-	$des=$row['Designation'];
+	$deg=$row['Degree'];
 	$add=$row['Address'];
 
 	if(isset($_POST['submit'])){
@@ -27,23 +27,23 @@
 	    $gen=$_POST['gen'];
 	    $mail=$_POST['mail'];
 	    $phone=$_POST['phone'];
-	    $des=$_POST['des'];
+	    $deg=$_POST['deg'];
 	    $add=$_POST['add'];
 
 	    if($pass == $cpass){
-	    	$sql= "UPDATE `admin_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `Gender`='$gen', `Phone`='$phone', `Designation`='$des', `Address`='$add' WHERE Username='$Uname'";
+	    	$sql= "UPDATE `doctor_reg` SET `Name`='$name', `Username`='$uname', `Email`='$mail', `Password`='$pass', `C_password`='$cpass', `B_Date`='$date', `Gender`='$gen', `Phone`='$phone', `Degree`='$deg', `Address`='$add' WHERE Username='$Uname'";
 		    mysqli_query($con, $sql);
 		    ?>
 		    <script>
 		    	alert("Successfully Updated.")
-		    	window.location.href = "admin_work.php";
+		    	window.location.href = "doctor_work.php";
 		    </script>
 		    <?php
 	    }else{
 	    	?>
 		    <script>
 		    	alert("Password Don't match")
-		    	window.location.href = "update_admin.php";
+		    	window.location.href = "up_doc.php";
 		    </script>
 		    <?php
 	    }
@@ -55,15 +55,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Update Admin Information</title>
+	<title>Update Doctor Information</title>
 	<link rel="stylesheet" type="text/css" href="CSS/signup.css">
 	<link rel="icon" href="img/logo.png">
 
 </head>
 <body>
-	<a href="admin_work.php"><button class="btn">Back</button></a>
+	<a href="doctor_work.php"><button class="btn">Back</button></a>
 	<form class="box" method="POST">
-		<h1>Update Admin Information</h1>
+		<h1>Update Doctor Information</h1>
 		<table>
 			<tr>
 				<th>Full Name</th>
@@ -102,14 +102,17 @@
 				<td><input type="number" name="phone" placeholder="xxx-xxx-xxx" value='<?php echo $phone;?>'  required></td>
 			</tr>
 			<tr>
-				<th>Designation</th>
+				<th>Degree</th>
 				<td>
-					<select name="des" value='<?php echo $des;?>' required>
-						<option selected disabled >--Designation--</option>
-						<option>Chief Doctor </option>
-						<option>Manager</option>
-						<option>Receptionist</option>
-						<option>Vaccine Committee Member</option>
+					<select name="deg" value='<?php echo $deg;?>' required>
+						<option selected disabled >Degree</option>
+						<option>MBBS</option>
+						<option>FCPS</option>
+						<option>BMBS</option>
+						<option>MBChC</option>
+						<option>MBBCh</option>
+						<option>MD</option>
+						<option>DO</option>
 
 					</select>
 				</td>

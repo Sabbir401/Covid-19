@@ -60,6 +60,7 @@
 	<link rel="icon" href="img/logo.png">
 </head>
 <body>
+	<a href="admin_work.php"><button class="btn">Back</button></a>
 	<form class="box" method="POST">
 		<h1>Update Doctor Information</h1>
 		<table>
