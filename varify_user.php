@@ -27,7 +27,7 @@
 		    <?php
 	    }	    	    
 	?>
-	<a href="admin_work.php"><button class="btn">Back</button></a>
+	<a href="doctor_work.php"><button class="btn">Back</button></a>
 	<form class="box" action="varify_user.php" method="POST">
 		<h1>Update Vaccination Status</h1>
 		<table>

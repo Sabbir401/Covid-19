@@ -2,6 +2,12 @@
 	include 'connect.php';
 	session_start();
 	$Uname=$_SESSION["Uname"];
+	
+	$sql= "SELECT * FROM doctor_reg WHERE `Username`='$Uname'";
+	$res=mysqli_query($con,$sql);
+	while ($row=mysqli_fetch_assoc($res)) {
+		$name=$row['Name'];
+	}
 ?>
 
 <html>
@@ -13,14 +19,13 @@
 	<script src="https://kit.fontawesome.com/11c476db2a.js" crossorigin="anonymous"></script>
 	<link rel="icon" href="img/logo.png">
 	<title>Doctor Schedule</title>
+
 </head>
 <body>
 	<div class="Container">
+		<h1>Doctor Schedule</h1>
 		<div class="welcome">
 			<table>
-				<tr>
-					<th colspan="2">Welcome <?php echo $Uname?></th>
-				</tr>
 				<tr>
 					<form action="doc_sche.php" method="POST">
 						<td><input type="date" name="date" required></td>
@@ -31,16 +36,14 @@
 			
 				<?php
 					if(isset($_POST['submit'])){
-						$sql= "SELECT * FROM doctor_reg WHERE `Username`='$Uname'";
-						$res=mysqli_query($con,$sql);
-						$row=mysqli_fetch_assoc($res);
-						$name=$row['Name'];
 						$date=$_POST['date'];
-						$sql1 = "SELECT * FROM manage_doc WHERE `Doctor Name`='$name' AND `Date`='$date'";
-						$res1=mysqli_query($con,$sql1);
-						$row1=mysqli_fetch_assoc($res1);
-						$time=$row1['Time'];
-						$cen=$row1['Center'];
+
+						$query = "SELECT * FROM manage_doc WHERE `Doctor Name`='$name' AND `Date`='$date'";
+						$result=mysqli_query($con,$query);
+						while ($row1=mysqli_fetch_assoc($result)) {
+							$time=$row1['Time'];
+							$cen=$row1['Center'];
+						}		
 						echo '<tr>
 								<th>Name</th>
 								<td>'.$name.'</td>

@@ -29,19 +29,19 @@
 		    if(preg_match($pattern1, $mail) or preg_match($pattern2, $mail) or preg_match($pattern3, $mail) or preg_match($pattern4, $mail)){
 		    	if(preg_match($pattern, $pass)){
 				    if($pass == $cpass){
-				    	$sql= "UPDATE `admin_reg` SET `Password`='$pass', `C_password`='$cpass' WHERE Username = '$uname' && Email='$mail' && Password = '$opass'";
+				    	$sql= "UPDATE `doctor_reg` SET `Password`='$pass', `C_password`='$cpass' WHERE Username = '$uname' && Email='$mail' && Password = '$opass'";
 					    mysqli_query($con, $sql);
 					    ?>
 					    <script>
 					    	alert("Successfully Changed Password.")
-					    	window.location.href = "admin_login.php";
+					    	window.location.href = "doctor_login.php";
 					    </script>
 					    <?php
 				    }else{
 				    	?>
 					    <script>
 					    	alert("Password Don't match")
-					    	window.location.href = "admin_forgot.php";
+					    	window.location.href = "doctor_forgot.php";
 					    </script>
 					    <?php
 				    }
@@ -64,7 +64,7 @@
 
 		}
 	?>
-	<form class="box" action="admin_forgot.php" method="POST">
+	<form class="box" action="doctor_forgot.php" method="POST">
 		<h1>Forgot Password</h1>
 		<input type="text" name="uname" placeholder="User Name" required></input>
 		<input type="email" name="mail" placeholder="email@gmail.com" required>

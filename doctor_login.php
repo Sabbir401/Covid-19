@@ -46,7 +46,7 @@
 		<input type="password" name="pass" placeholder="Password">
 		<input type="submit" name="submit" value="Login">
 		<h3><a href="admin_signup.php">Register now</a></h3>
-		<h3><a href="https://www.w3schools.com/html/html_links_colors.asp">Forget Password?</a></h3>
+		<h3><a href="doctor_forgot.php">Forget Password?</a></h3>
 	</form>
 </body>
 </html>

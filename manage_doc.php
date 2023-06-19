@@ -18,22 +18,19 @@
 			$aname=$_POST['aname'];
 		    $dname=$_POST['dname'];
 		    $date=$_POST['date'];
-		    $month=$_POST['month'];
-		    $year=$_POST['year'];
 		    $time=$_POST['time'];
 		    $center=$_POST['center'];
 
 
-		    if($pass == $cpass){
-		    	$sql= "INSERT INTO `manage_doc`(`Admin Name`, `Doctor Name`, `Date`, `Month`, `Year`, `Time`, `Center`) VALUES ('$aname','$dname','$date','$month','$year','$time','$center')";
-			    mysqli_query($con, $sql);
-			    ?>
-			    <script>
-			    	alert("Successfully Assigned.")
-			    	window.location.href = "admin_work.php";
-			    </script>
-			    <?php
-		    }	    	    
+	    	$sql= "INSERT INTO `manage_doc`(`Admin Name`, `Doctor Name`, `Date`, `Time`, `Center`) VALUES ('$aname','$dname','$date','$time','$center')";
+		    mysqli_query($con, $sql);
+		    ?>
+		    <script>
+		    	alert("Successfully Assigned.")
+		    	window.location.href = "admin_work.php";
+		    </script>
+		    <?php
+			    	    
 		}
 	?>
 	<a href="admin_work.php"><button class="btn">Back</button></a>

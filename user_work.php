@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="CSS/doctor.css">
 	<script src="https://kit.fontawesome.com/11c476db2a.js" crossorigin="anonymous"></script>
 	<link rel="icon" href="img/logo.png">
-	<title>Doctor Profile</title>
+	<title>User Profile</title>
 	<script type="text/javascript">
 	    function redirectToPage(pageUrl) {
 	      window.location.href = pageUrl;
@@ -31,11 +31,10 @@
         </button>
       </div>
       <div class="content">
-        <button class="action-button" onclick="redirectToPage('home.php')">View Profile</button>
-        <button class="action-button" onclick="redirectToPage('up_doc.php')">Update Profile</button>
-        <button class="action-button" onclick="redirectToPage('all_doc.php')">See All Doctors Information</button>
-        <button class="action-button" onclick="redirectToPage('varify_user.php')">Verify Vaccination</button>
-        <button class="action-button" onclick="redirectToPage('doc_sche.php')">See Today's Schedule</button>
+        <button class="action-button" onclick="redirectToPage('user_view.php')">View Profile</button>
+        <button class="action-button" onclick="redirectToPage('up_user.php')">Update Profile</button>
+        <button class="action-button" onclick="redirectToPage('check_status.php')">Check Status</button>
+        <button class="action-button" onclick="redirectToPage('dwn_card.php')">Download Vaccination Card</button>
       </div>
 	
 </body>

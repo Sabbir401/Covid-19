@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="content">
-        <button class="action-button" onclick="redirectToPage('home.php')">View Profile</button>
+        <button class="action-button" onclick="redirectToPage('doc_view.php')">View Profile</button>
         <button class="action-button" onclick="redirectToPage('up_doc.php')">Update Profile</button>
         <button class="action-button" onclick="redirectToPage('all_doc.php')">See All Doctors Information</button>
         <button class="action-button" onclick="redirectToPage('varify_user.php')">Verify Vaccination</button>
